@@ -27,8 +27,10 @@ def label_text(text):
     text_lower = text.lower()  # Case folding
     if any(word in text_lower for word in positive_words):
         return "Positif"
-    else:
+    elif any(word in text_lower for word in negative_words):
         return "Negatif"
+    else:
+        return "Netral"
 
 # Proses labeling
 labeled_data = [{"text": t, "label": label_text(t)} for t in data]
