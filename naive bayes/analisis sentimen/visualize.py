@@ -35,9 +35,9 @@ plt.savefig('sentiment_analysis_visualization.png')
 plt.show()
 
 # Create separate wordclouds for each sentiment
-plt.figure(figsize=(15, 5))
-for i, sentiment in enumerate(['Positif', 'Negatif', 'Netral'], 1):
-    plt.subplot(1, 3, i)
+plt.figure(figsize=(10, 5))  # Adjusted figure size for 2 plots instead of 3
+for i, sentiment in enumerate(['Positif', 'Negatif'], 1):
+    plt.subplot(1, 2, i)  # Changed to 1, 2 for two subplots
     text_data = " ".join(df[df['naive_bayes_prediction'] == sentiment]['text'])
     if text_data.strip():  # Check if there's any text
         wordcloud = WordCloud(
